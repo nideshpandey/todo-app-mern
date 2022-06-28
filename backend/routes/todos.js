@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Todo = require('../models/todoModel');
 
 //GET all todos
 router.get('/', (req, res) => {
@@ -12,8 +13,17 @@ router.get('/:id', (req, res) => {
 })
 
 //POST todos
-router.post('/', (req,res) => {
-    res.json({msg: 'POST todos'});
+router.post('/', async (req,res) => {
+    const {title, description} = req.body;
+    try {
+        const todo = await Todo.create({title, description});
+        res.status(200).json(todo);
+        
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({error: error.message});
+        
+    }
 })
 
 //DELETE todo
