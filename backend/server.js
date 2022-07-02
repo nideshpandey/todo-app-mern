@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   next();
 });
 
-//ROUTES
+//ROUTES: The specific routes to specific requests
 app.use(todoRoutes);
 
 //Connect to a database
