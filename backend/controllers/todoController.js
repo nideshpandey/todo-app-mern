@@ -38,7 +38,31 @@ const createTodo = async (req, res) => {
 };
 
 // DELETE todo
+const deleteTodo = async (req, res) => {
+  const { id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "Something went wrong." });
+  }
+
+  const todo = await Todo.findOneAndDelete({ _id: id });
+
+  if (!todo) {
+    return res.status(404).json({ error: "No such todo." });
+  }
+
+  res.status(200).json(todo);
+};
 
 // UPDATE todo
+const updateTodo = async (req, res) => {
+  const { id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "Something went wrong." });
+  }
 
-module.exports = { getTodos, getSingleTodo, createTodo };
+  const todo = await Todo.findOneAndUpdate({ _id: id }, { ...req.body });
+
+  res.status(200).json(todo);
+};
+
+module.exports = { getTodos, getSingleTodo, createTodo, deleteTodo, updateTodo };
