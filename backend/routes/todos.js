@@ -4,13 +4,13 @@ const router = express.Router();
 
 
 //GET all todos
-router.get('/', getTodos)
+router.get('/todos', getTodos)
 
 //GET single todo
 router.get('/:id', getSingleTodo)
 
 //POST todos
-router.post('/', createTodo)
+router.post('/todos', createTodo)
 
 //DELETE todo
 router.delete('/:id', deleteTodo)
