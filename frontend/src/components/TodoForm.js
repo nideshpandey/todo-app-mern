@@ -29,6 +29,7 @@ function TodoForm() {
       setError(null);
       console.log("Todo Added", json);
     }
+    
   };
   return (
     <form className="create" onSubmit={handleSubmit}>
