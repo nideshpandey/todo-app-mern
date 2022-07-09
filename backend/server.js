@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 });
 
 //ROUTES: The specific routes to specific requests
-app.use(todoRoutes);
+app.use('/api/todos',todoRoutes);
 
 //Connect to a database
 mongoose
