@@ -32,7 +32,7 @@ function TodoForm() {
   };
   return (
     <form className="create" onSubmit={handleSubmit}>
-      <h5>Add a Todo</h5>
+      <h3>Add a Todo</h3>
       <label>Enter Title:</label>
       <input
         type="text"

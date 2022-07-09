@@ -15,8 +15,8 @@ function Todo({ todo }) {
   };
   return (
     <div className="todo-details">
-      <h4>{todo.title}</h4>
-      <h3>{todo.description}</h3>
+      <h3>{todo.title}</h3>
+      <h5>{todo.description}</h5>
       <p>{todo.createdAt}</p>
       <button onClick={handleClick}>Delete</button>
       <br />
