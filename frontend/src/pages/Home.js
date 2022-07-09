@@ -7,7 +7,7 @@ function Home() {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const response = await fetch("/todos");
+      const response = await fetch("/api/todos");
       const json = await response.json();
 
       if (response.ok) {
