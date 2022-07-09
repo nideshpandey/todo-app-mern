@@ -10,7 +10,7 @@ function TodoForm() {
 
     const todos = { title, description };
 
-    const response = await fetch("/todos", {
+    const response = await fetch("/api/todos", {
       method: "POST",
       body: JSON.stringify(todos),
       headers: {
