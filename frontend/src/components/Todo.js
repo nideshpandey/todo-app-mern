@@ -3,7 +3,7 @@ import React from "react";
 function Todo({ todo }) {
   const handleClick = async () => {
     const response = await fetch("/api/todos/" + todo._id, {
-        method: 'DELETE'
+      method: "DELETE",
     });
 
     const json = await response.json();
@@ -18,7 +18,7 @@ function Todo({ todo }) {
       <h3>{todo.title}</h3>
       <h5>{todo.description}</h5>
       <p>{todo.createdAt}</p>
-      <button onClick={handleClick}>Delete</button>
+      <button class="material-symbols-outlined" onClick={handleClick}>delete</button>
       <br />
     </div>
   );
